@@ -1,55 +1,27 @@
-var swiper = new Swiper('.swiper-container', {
-    slidesPerView: 1,
-    spaceBetween: 10,
-    pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-    },
+const imgDiv = document.querySelector('.profile-pic-div');
+const img = document.querySelector('#photo');
+const file = document.querySelector('#file');
+const uploadBtn = document.querySelector('#uploadBtn');
+
+imgDiv.addEventListener('mouseenter', function(){
+    uploadBtn.style.display = "block";
 });
 
-function selectTemplate(template) {
-    // Hide all sections
-    var sections = document.querySelectorAll('.section');
-    sections.forEach(section => {
-        section.classList.add('hidden');
-    });
+imgDiv.addEventListener('mouseleave', function(){
+    uploadBtn.style.display = "none";
+});
 
-    // Show sections related to the selected template
-    var templateSections = document.querySelectorAll('.' + template);
-    templateSections.forEach(section => {
-        section.classList.remove('hidden');
-    });
+file.addEventListener('change', function(){
+    const choosedFile = this.files[0];
 
-    // Show generate resume button and resume output section
-    document.getElementById('generate-resume').classList.remove('hidden');
-    document.getElementById('resume-output').classList.remove('hidden');
-}
+    if (choosedFile) {
 
-document.getElementById('generate-resume').addEventListener('click', function() {
-    // Gather user inputs
-    var personalInfo = {
-        name: document.getElementById('name').value,
-        email: document.getElementById('email').value,
-        phone: document.getElementById('phone').value
-    };
+        const reader = new FileReader(); 
 
-    var educationInfo = {
-        degree: document.getElementById('degree').value,
-        university: document.getElementById('university').value,
-        graduationYear: document.getElementById('graduation-year').value
-    };
+        reader.addEventListener('load', function(){
+            img.setAttribute('src', reader.result);
+        });
 
-    var experienceInfo = {
-        jobTitle: document.getElementById('job-title').value,
-        company: document.getElementById('company').value,
-        experienceYears: document.getElementById('experience-years').value
-    };
-
-    // Generate resume output based on the selected template and user inputs
-    var selectedTemplate = document.querySelector('.section:not(.hidden)');
-    var resumeOutput = document.getElementById('resume-output');
-    resumeOutput.innerHTML = `
-        <h2>Resume Output</h2>
-        <h3>Template: ${selectedTemplate.id}</h3>
-        <h3>Personal Information</h3>
-        <p>Name: ${personalInfo.name}</p
+        reader.readAsDataURL(choosedFile);
+    }
+});
