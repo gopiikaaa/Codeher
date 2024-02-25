@@ -1,0 +1,150 @@
+body {
+  background:white;
+}
+.column8 {
+  display: flex;
+  flex-direction: column;
+  padding-top: 3vw;
+  align-items: left;
+  width: 40vw;
+  height: auto;
+}
+.column4 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40vw;
+  height: auto;
+}
+.photochanging {
+  border: none;
+  border-radius: 100%;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+  height: 15vw;
+  width: 15vw;
+}
+.sizechange {
+  border: none;
+  border-radius: 100%;
+  width: 2vw;
+  height: 2vw;
+}
+.sizediffer {
+  border: none;
+  border-radius: 10%;
+  width: 2vw;
+  height: 2vw;
+}
+.career {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 0.5vw;
+  text-align: center;
+}
+.career2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 1.5vh;
+  padding: 0.2vw 2vw;
+}
+.textcareer {
+  margin: auto;
+}
+.my-2vh {
+  margin: 2vh 0vh 2vh 0vh;
+}
+.flexcol {
+  display: flex;
+  margin: 2vh 0vh;
+  flex-direction: column;
+  row-gap: 0.4vh;
+}
+
+.forall {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 1vh;
+}
+.forall2 {
+  display: flex;
+  align-items: left;
+  column-gap: 1vh;
+}
+.fontsize {
+  font-size: 2vh;
+}
+.interests {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1vh;
+  justify-content: left;
+  align-items: left;
+}
+.mauto {
+  margin: auto;
+}
+
+.selfleft {
+  justify-self: left;
+}
+
+.beautifulheading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.colorchange {
+  background: -webkit-linear-gradient(#319c91, #e7390e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font: bolder;
+  border: none;
+}
+
+.colorchange :hover {
+  border: none;
+}
+
+.bordernone {
+  border: none;
+}
+
+.profile-pic-div {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid grey;
+}
+
+#photo {
+  height: 50%;
+  width: 50%;
+}
+
+#file {
+  display: none;
+}
+
+#uploadBtn {
+  height: 5vh;
+  width: 10vw;
+  position: absolute;
+  top: 12vw;
+  right: 16vw;
+  /* transform: translateX(-50%); */
+  text-align: center;
+  /* background: rgba(0, 0, 0, 0.7); */
+  color: black;
+  line-height: 30px;
+  font-family: sans-serif;
+  font-size: 15px;
+  cursor: pointer;
+  display: none;
+}
